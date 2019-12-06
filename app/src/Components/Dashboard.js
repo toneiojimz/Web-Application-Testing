@@ -1,5 +1,24 @@
 import React, {useState} from 'react';
 import Display from './Display';
+import styled from 'styled-components';
+
+const ActionButtons = styled.div`
+   display: flex;
+   justify-content: center;
+    padding-bottom: 49px;
+    padding-right: 7px;
+
+`;
+
+const Buttons =styled.button`
+    font-size: 2rem;
+    padding: 10px
+`;
+
+const Page = styled.div`
+  background: orangered;  
+
+`;
 
 
 const Dashboard = () => {
@@ -33,23 +52,23 @@ const Dashboard = () => {
     }
 
     return (
-        <div>
+        <Page>
             <Display data ={value}/>
-            <div className='center'>
-            <div className='some-space'>
-                <button id='strike' onClick={handleStrike}>Strike</button>    
+            <ActionButtons>
+            <div>
+                <Buttons id='strike' onClick={handleStrike}>Strike</Buttons>    
             </div> 
-            <div className='some-space'>
-                <button id='ball' onClick={handleBall}>Ball</button>    
+            <div>
+                <Buttons id='ball' onClick={handleBall}>Ball</Buttons>    
             </div>
-            <div className='some-space'>
-                <button id='foul' onClick={handleFoul}>Foul</button>    
+            <div>
+                <Buttons id='foul' onClick={handleFoul}>Foul</Buttons>    
             </div> 
-            <div className='some-space'>
-                <button id='hit' onClick={handleHit}>Hit</button>    
+            <div>
+                <Buttons id='hit' onClick={handleHit}>Hit</Buttons>    
             </div>        
-            </div>
-        </div>
+            </ActionButtons>
+        </Page>
     )
 }
 
